@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="./Icons/sun.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- ------------------ LEFT MENU BAR ------------------  -->
+    <div class="leftMenuBar">
+      <div class="weatherIcon">
+        <div class="weatherbg">
+          <img src="./Icons/weather.png" alt="wather">
+        </div>
+      </div>
+      <div class="menuBar">
+        <div class="menuLogo active">
+          <a href="#">
+            <img src="./Icons/foursquares.png" alt="foursquares">
+          </a>
+        </div>
+        <div class="menuLogo">
+          <a href="#">
+            <img src="./Icons/aim.png" alt="aim">
+          </a>
+        </div>
+        <div class="menuLogo">
+          <a href="#">
+            <img src="./Icons/geography.png" alt="geography">
+          </a>
+        </div>
+        <div class="menuLogo">
+          <a href="#">
+            <img src="./Icons/stopwatch.png" alt="stopwatch">
+          </a>
+        </div>
+        <div class="menuLogo">
+          <a href="#">
+            <img src="./Icons/calendar.png" alt="calendar">
+          </a>
+        </div>
+        <div class="menuLogo">
+          <a href="#">
+            <img src="./Icons/statistics.png" alt="statistics">
+          </a>
+        </div>
+        <div class="menuLogo">
+          <a href="#">
+            <img src="./Icons/image-gallery.png" alt="imgallery">
+          </a>
+        </div>
+        <div class="menuLogo">
+          <a href="#">
+            <img src="./Icons/smile.png" alt="smile">
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ------------------ CONTENT ------------------  -->
+    <div class="content">
+      <div class="topMenuBar">
+        <div class="alertIcon">
+          <div class="logo">
+            <a href="#">
+              <img src="./Icons/bell.png" alt="alert">
+            </a>
+          </div>
+        </div>
+        <form class="seacrchBox flexRow" role="search">
+          <input type="search" name="search" id="search" placeholder="Search for a city or location"
+            aria-label="search">
+          <button type="submit" class="logo" id="submit">
+            <img src="./Icons/search.png" alt="search">
+          </button>
+        </form>
+        <div class="accountIcon">
+          <div class="logo">
+            <a href="#">
+              <img src="./Icons/user.png" alt="user">
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ------------------ WEATHER FORCAST ------------------  -->
+
+      <div class="weather_forcast">
+        <div class="forcast_presentDay glassbg flexCol">
+          <div class="pDay_top flexRow">
+            <div class="pday_details">
+              <p class="second_text second_fSize">
+                <span id="city"></span>,
+                <span id="country"></span>
+              </p>
+              <p class="primary_text">
+                <span class="head_fSize" id="maxTemp"></span>
+                <span class="powerText">&deg C</span>
+              </p>
+              <p class="second_text second_fSize" id="symbolPhrase" style="text-transform: capitalize;"></p>
+              <p class="third_text second_fSize" id="date"></p>
+            </div>
+            <div class="pday_icon" id="todayweatherimg">
+              <!-- IMG Render by Js -->
+            </div>
+          </div>
+          <div class="pDay_bottom flexCol">
+            <div class="wDetails flexRow">
+              <div class="wdet_Left flexRow">
+                <img src="./Icons/windspeed.png" alt="windspeed">
+                <span class="second_text second_fSize">Wind Speed</span>
+              </div>
+              <div class="wdet_Right">
+                <p class="primary_text second_fSize"> <span id="maxWindSpeed"></span> mph</p>
+              </div>
+            </div>
+            <div class="wDetails flexRow">
+              <div class="wdet_Left flexRow">
+                <img src="./Icons/humidity.png" alt="humidity">
+                <span class="second_text second_fSize">Humidity</span>
+              </div>
+              <div class="wdet_Right">
+                <span class="primary_text second_fSize"><span id="maxRelHumidity"></span>%</span>
+              </div>
+            </div>
+            <div class="wDetails flexRow">
+              <div class="wdet_Left flexRow">
+                <img src="./Icons/windspeed.png" alt="windspeed">
+                <span class="second_text second_fSize">Air Quality</span>
+              </div>
+              <div class="wdet_Right">
+                <p class="primary_text second_fSize" id="windDir"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="forcast_pDay_temp glassbg flexCol">
+          <div class="pday_heading second_text second_fSize">TODAY</div>
+          <div class="pday_temp">
+            <ul class="flexRow pdayTemp" id="phourTemp">
+              <!-- Per Hour temparature render by ja -->
+            </ul>
+          </div>
+
+        </div>
+        <div class="forcast_temp_quality flexRow">
+          <div class="forcast_temp glassbg flexCol">
+            <p class="second_text second_fSize">FEELS LIKE</p>
+            <div class="temperature flexRow">
+              <img src="./Icons/thermometer.png" alt="thermometer">
+              <p class="primary_text flexRow">
+                <span id="maxFeelsLikeTemp"></span>
+                <span class="powerText">&deg;C</span>
+              </p>
+            </div>
+            <p class="third_text">
+              Humidity is making it feel like harder.In overnight it low down.
+            </p>
+          </div>
+          <div class="forcast_airQuality glassbg flexCol">
+            <div class="airQuality flexCol">
+              <p class="second_text second_fSize">AIR QUALITY</p>
+              <p class="primary_text" id="windDir2"></p>
+              <p class="third_text">Low for the rest of the day</p>
+            </div>
+            <div class="uvIndex flexCol">
+              <p class="second_text second_fSize">UV INDEX</p>
+              <p class="primary_text" id="uvIndex"></p>
+              <p class="third_text">UV index is <span class="primary_text" id="uvIndex2"></span>, which is the same as
+                yesterday at
+                about this time </p>
+            </div>
+          </div>
+        </div>
+        <div class="forcast_next7Days glassbg">
+          <div class="n7day_heading flexRow">
+            <p class="primary_text p_fSize">7-Day Forecast</p>
+          </div>
+          <div class="n7day_weather">
+            <ul class="n7day_ul flexCol">
+              <!-- Data Render by JS -->
+            </ul>
+          </div>
+        </div>
+        <div class="forcast_sun glassbg flexCol">
+          <div class="sun_heading">
+            <p class="primary_text p_fSize">SUN & MOON</p>
+          </div>
+          <div class="sun_set_rise flexRow">
+            <div class="sunRise flexCol">
+              <p class="second_text second_fSize">Sunrise</p>
+              <p class="primary_text second_fSize sunP">
+                <span id="sunrise"></span> AM
+              </p>
+            </div>
+            <div class="sun flexRow">
+              <div class="sun-times">
+                <div class="sun-path">
+                  <div class="sun-animation"></div>
+                </div>
+                <div class="sun-symbol-path"><span class="symbol">
+                    <img src="./Icons/sun.png" alt="sun">
+                  </span></div>
+              </div>
+            </div>
+            <div class="sunSet flexCol">
+              <p class="second_text second_fSize">Sunset</p>
+              <p class="primary_text second_fSize sunP">
+                <span id="sunset"></span> PM
+              </p>
+            </div>
+          </div>
+          <div class="sun_details flexRow">
+            <div class="details flexCol">
+              <p class="second_text second_fSize">Visibility</p>
+              <p class="primary_text second_fSize">
+                <span id="minVisibility"></span> mi
+              </p>
+            </div>
+            <div class="details flexCol">
+              <p class="second_text second_fSize">Pressure</p>
+              <p class="primary_text second_fSize"><span id="pressure"></span> in</p>
+            </div>
+            <div class="details flexCol">
+              <p class="second_text second_fSize">Dew Point</p>
+              <p class="primary_text second_fSize"><span id="maxDewPoint"></span>&deg;</p>
+            </div>
+            <div class="details flexCol">
+              <p class="second_text second_fSize">Rain days</p>
+              <p class="primary_text second_fSize" id="precipProb"></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="forcast_otherCity">
+          <div class="oCity_heading">
+            <p class="second_text second_fSize">WEATHER AROUND THE WORLD</p>
+          </div>
+          <div class="oCity_list">
+            <ul class="flexCol oCity_ul">
+              <!-- other city weather render by Js  -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,554 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&display=swap');
+
+* {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      overflow: hidden;
+      text-decoration: none;
+}
+
+:root {
+      --primarycol: #23242a;
+      --headingcol: #74d248;
+      --white: #ffffffe9;
+      --gray: #a9acad;
+      --primartyFont: 'Open Sans', sans-serif;
+      --secondryFont: 'Rajdhani', sans-serif;
+}
+
+*:focus {
+      outline: none;
+      border: none;
+}
+
+.flexRow {
+      display: flex;
+      flex-direction: row;
+}
+
+.flexCol {
+      display: flex;
+      flex-direction: column;
+}
+
+.powerText {
+      position: relative;
+      top: -10px;
+      font-size: 25px;
+}
+
+.glassbg {
+      background: rgb(21 32 39 / 40%);
+      -webkit-backdrop-filter: blur(5px);
+      backdrop-filter: blur(4px);
+      border-radius: 25px;
+      padding: 1.5rem;
+}
+
+.primary_text {
+      color: var(--headingcol);
+      font-family: var(--secondryFont);
+}
+
+.second_text {
+      color: var(--white);
+      font-family: var(--primartyFont);
+}
+
+.third_text {
+      color: var(--gray);
+      font-family: var(--primartyFont);
+}
+
+.head_fSize {
+      font-size: 35px;
+      letter-spacing: 0.05em;
+      line-height: 40px;
+}
+
+.p_fSize {
+      font-size: 30px;
+      letter-spacing: 0.05em;
+      line-height: 30px;
+}
+
+.second_fSize {
+      font-size: 18px;
+      letter-spacing: 0.05em;
+      line-height: 22px;
+}
+
+.container {
+      width: 100vw;
+      height: 100vh;
+      background: url('./Icons/bg.jpg') no-repeat center center;
+      background-size: cover;
+      display: flex;
+}
+
+/*------------------> LEFT MENU BAR <------------------  */
+
+.leftMenuBar {
+      background-color: var(--primarycol);
+      width: fit-content;
+      width: 60px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: self-start;
+      justify-content: center;
+      padding: 0.3rem;
+}
+
+.weatherIcon {
+      height: 8%;
+}
+
+.weatherbg {
+      background: #1396ff;
+      border-radius: 10px;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+}
+
+.weatherbg img {
+      width: 40px;
+      height: 40px;
+      object-fit: cover;
+}
+
+.menuBar {
+      width: 100%;
+      height: 92%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+}
+
+.menuLogo {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+}
+
+.menuLogo:hover {
+      background-color: var(--headingcol);
+}
+
+.menuLogo:hover img {
+      mix-blend-mode: difference;
+}
+
+.active {
+      background-color: var(--headingcol);
+}
+
+.active a img {
+      mix-blend-mode: difference;
+}
+
+/* ------------------ CONTENT ------------------ */
+.content {
+      width: 100%;
+      height: 100%;
+}
+
+/*------------------> LEFT MENU BAR <------------------  */
+
+.topMenuBar {
+      background: rgba(166, 163, 163, 0.2);
+      -webkit-backdrop-filter: blur(4px);
+      backdrop-filter: blur(4px);
+      display: flex;
+      align-items: center;
+      justify-content: end;
+      gap: 1rem;
+      width: 100%;
+      height: 60px;
+      padding: 0.5rem 1rem;
+}
+
+.seacrchBox {
+      background: rgba(255, 254, 254, 0.65);
+      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
+      padding: 0.1rem 0.5rem;
+      border-radius: 5px;
+      gap: 1rem;
+      height: 40px;
+}
+
+.seacrchBox input {
+      background: transparent;
+      border: none;
+      color: #000000;
+      font-size: 15px;
+}
+
+.seacrchBox button {
+      background: transparent;
+      border: none;
+}
+
+.seacrchBox button img {
+      width: 25px;
+      height: 25px;
+}
+
+/*  ------------------ WEATHER FORCAST ------------------  */
+
+.weather_forcast {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+      grid-template-areas:
+            'pDay n7Day oCity'
+            'pDay n7Day oCity'
+            'pTemp n7Day oCity'
+            'tempAir pSun oCity'
+            'tempAir pSun oCity'
+      ;
+      gap: 1rem;
+      padding: 1rem;
+      height: 92%;
+
+}
+
+.forcast_presentDay {
+      grid-area: pDay;
+      gap: .5rem;
+      justify-content: space-between;
+}
+
+.forcast_pDay_temp {
+      grid-area: pTemp;
+      padding: 0.5rem 1rem;
+      height: 100%;
+      align-items: flex-start;
+      justify-content: flex-start;
+}
+
+.forcast_next7Days {
+      grid-area: n7Day;
+}
+
+.forcast_sun {
+      grid-area: pSun;
+      gap: 1rem;
+      justify-content: space-between;
+      align-items: flex-start;
+}
+
+.forcast_temp_quality {
+      grid-area: tempAir;
+      gap: 1rem;
+}
+
+.forcast_otherCity {
+      grid-area: oCity;
+      gap: 0.5rem;
+}
+
+
+/*  <<-------->> Forcast PresentDay  <<-------->>  */
+.pDay_top {
+      gap: 1rem;
+      justify-content: space-between;
+}
+
+.pday_icon {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+}
+
+.pday_icon img {
+      width: 80%;
+      height: 80%;
+      object-fit: contain;
+}
+
+.pDay_bottom {
+      gap: 0.5rem;
+      border-top: 3px solid var(--gray);
+      width: 100%;
+      padding-top: 0.5rem;
+}
+
+.wDetails {
+      justify-content: space-between;
+      gap: 1rem;
+}
+
+.wdet_Left {
+      gap: 1.5rem;
+}
+
+.wdet_Left img {
+      width: 25px;
+      object-fit: contain;
+}
+
+/*  <<-------->> Forcast PresentDay Temp <<-------->>  */
+
+.pday_heading {
+      font-size: 16px;
+      font-family: var(--primartyFont);
+}
+
+.pday_temp {
+      width: 100%;
+}
+
+.pday_temp ul {
+      gap: 1rem;
+      padding: 0.3rem 0;
+      font-family: var(--secondryFont);
+      align-items: center;
+      justify-content: center;
+
+}
+
+.pday_temp ul li {
+      background: #0d14197c;
+      padding: 0.2rem 0.3rem;
+      border-radius: 8px;
+      gap: 0.23rem;
+      text-align: center;
+}
+
+.tempList img {
+      width: 30px;
+      height: 20px;
+      object-fit: contain;
+      padding: 0.1rem 0 0 0;
+}
+
+.tempList span:first-child {
+      font-size: 13px;
+}
+
+.tempList span:last-child {
+      font-size: 13px;
+}
+
+/*  <<-------->> Forcast Next 7Day  <<-------->>  */
+
+.n7day_heading {
+      justify-content: space-between;
+      gap: 1rem;
+}
+
+.n7day_ul {
+      justify-content: center;
+      align-items: flex-start;
+      padding: 0.5rem 0;
+      gap: .5rem;
+      width: 100%;
+}
+
+.n7day_ul li {
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+}
+
+li>.w_temp {
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+}
+
+.w_temp span {
+      font-size: 20px;
+}
+
+/*  <<-------->> Forcast SUNRISE & SUNSET  <<-------->>  */
+
+:root {
+      --arc-diameter: 170px;
+}
+
+.sun_set_rise {
+      justify-content: space-between;
+      align-items: center;
+}
+
+.sunRise,
+.sunSet {
+      gap: 0.3rem;
+}
+
+:has(.sunRise, .sunSet) .sunP {
+      font-size: 23px;
+      font-weight: 550;
+}
+
+.sun-times {
+      width: 230px;
+      height: 60px;
+      overflow-y: hidden;
+}
+
+.sun-path {
+      margin-left: 6px;
+      width: var(--arc-diameter);
+      height: var(--arc-diameter);
+      overflow: hidden;
+      border: 3px dashed #ffff0092;
+      border-radius: 50%;
+}
+
+.sun-animation {
+      width: 0px;
+      height: 150px;
+      background: linear-gradient(70deg, #ffff00, #ffa600);
+      transition: width 2s ease-out;
+}
+
+.sun-animation {
+      width: 70%;
+}
+
+.sun-symbol-path {
+      position: absolute;
+      left: calc((var(--arc-diameter) / 2) + 118px);
+      bottom: 88px;
+      height: calc(var(--arc-diameter) / 2);
+      text-shadow: 0 0 5px black;
+      transition: transform 2s ease-out;
+      transform-origin: 50% 100%;
+      transform: rotateZ(-73deg);
+}
+
+.sun-symbol-path .symbol {
+      position: relative;
+      font-size: 16px;
+      top: -8px;
+}
+
+.sun-symbol-path {
+      transform: rotateZ(32deg);
+}
+
+.sun_details {
+      justify-content: space-between;
+      width: 100%;
+      text-align: center;
+}
+
+
+/*  <<-------->> Forcast Temperature & Quality  <<-------->>  */
+
+.forcast_temp {
+      width: 100%;
+      gap: 0.5rem;
+      justify-content: space-between;
+}
+
+.forcast_temp .temperature {
+      height: 60%;
+      justify-content: space-between;
+      align-items: center;
+}
+
+.forcast_temp>p:last-child {
+      font-size: 13px;
+}
+
+.temperature>p {
+      font-size: 100px;
+}
+
+.temperature>p>span:last-child {
+      font-size: 40px;
+      top: 20px;
+}
+
+.temperature img {
+      width: 25%;
+      object-fit: contain;
+}
+
+.forcast_airQuality {
+      width: 100%;
+      gap: 1rem;
+}
+
+.airQuality,
+.uvIndex {
+      gap: .3rem;
+}
+
+.airQuality p:nth-child(2),
+.uvIndex p:nth-child(2) {
+      font-size: 22px;
+}
+
+.airQuality p:last-child,
+.uvIndex p:last-child {
+      font-size: 14px;
+}
+
+/*  <<-------->> Forcast Other City  <<-------->>  */
+
+.oCity_heading {
+      padding: 1rem 1.5rem;
+}
+
+.oCity_list ul {
+      gap: 1rem;
+}
+
+.list {
+      width: 100%;
+      height: 105px;
+      padding: 1rem 1.5rem;
+}
+
+.list .listBg {
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+}
+
+.oCityDetails {
+      justify-content: flex-start;
+      height: 100%;
+}
+
+.oCityDetails>p {
+      text-transform: capitalize;
+}
+
+.oCityDetails>p:first-child,
+.oCityDetails>p:last-child {
+      font-size: 13px;
+      line-height: 15px;
+}
+
+.oCityDetails>p:last-child {
+      padding: 0.3rem 0 0 0;
+}
+
+.oCityDetails>p:nth-child(2) {
+      font-size: 28px;
+      line-height: 35px;
+      font-family: var(--secondryFont);
+}
+
+
+.seacrchBox input:-internal-autofill-selected {
+      background-color: transparent !important;
+}
